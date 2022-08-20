@@ -10,8 +10,8 @@ import javax.persistence.Id
 data class Login(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-    var name: String = "",
-    var email: String = "",
-    var password: String = "",
+    var name: String,
+    var email: String,
+    var password: String,
     var registrado: LocalDateTime = LocalDateTime.now()
 )
