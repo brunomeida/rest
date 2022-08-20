@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "14cebd7b-a253-4856-b311-768c22915124",
+		"_postman_id": "eabcd479-0c35-4b24-8463-c210d7649a24",
 		"name": "Projeto Rest Kotlin",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "13473096"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -26,7 +25,7 @@
 			"response": []
 		},
 		{
-			"name": "Post User Copy",
+			"name": "User",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -60,7 +59,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\n    \"id\": 1,\n    \"name\": \"Bruno\",\n    \"email\": \"bruno@meida\",\n    \"passwprd\": \"asdasdadsad\",\n    \"admin\": false\n}",
+					"raw": "    {\n    \"id\": 1,\n    \"name\": \"Bruno\",\n    \"email\": \"bruno@meida\",\n    \"password\": \"asdasdadsad\",\n    \"admin\": false\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,6 +75,26 @@
 					"port": "8080",
 					"path": [
 						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
 					]
 				}
 			},

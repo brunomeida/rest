@@ -13,7 +13,6 @@ import java.util.stream.Collectors
 
 @Service
 class UserServiceImpl(
-    private var users: List<User> = ArrayList(),
     private var singUpUserMapper: SingUpUserMapper,
     private val userMapper: UserMapper,
     private val userRepository: UserRepository

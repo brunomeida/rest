@@ -21,7 +21,7 @@ class UserRepository(
     }
 
     fun get(id: Long): User{
-        return users.stream().findFirst().get()
+        return getUserbyId(id)
     }
 
     fun update(user: User, dto: UpdateUserDTO): User {
