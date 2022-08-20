@@ -15,7 +15,7 @@ data class UpdateUserDTO(
     val email: String,
 
     @field:NotEmpty(message = "password too short")
-    @field:Size(min=6, max=256)
+    @field:Size(min=6, max=255)
     val password: String,
 
     val admin: Boolean = false

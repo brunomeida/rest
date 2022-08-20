@@ -11,7 +11,7 @@ import io.mockk.impl.annotations.RelaxedMockK
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class UserServiceImplTest {
+internal class LoginServiceImplTest {
     @RelaxedMockK
     lateinit var singUpUserMapper: SingUpUserMapper
 

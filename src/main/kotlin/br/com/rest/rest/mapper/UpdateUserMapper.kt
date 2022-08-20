@@ -1,17 +1,16 @@
 package br.com.rest.rest.mapper
 
 import br.com.rest.rest.dto.SingUpDTO
-import br.com.rest.rest.model.User
+import br.com.rest.rest.model.Login
 import org.springframework.stereotype.Component
 
 @Component
-class UpdateUserMapper: Mapper<SingUpDTO, User> {
-    override fun map(t: SingUpDTO): User {
-        return User(
+class UpdateUserMapper: Mapper<SingUpDTO, Login> {
+    override fun map(t: SingUpDTO): Login {
+        return Login(
             name = t.name,
             email = t.email,
-            password = t.password,
-            admin = t.admin
+            password = t.password
         )
     }
 }
