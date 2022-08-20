@@ -5,7 +5,6 @@ import br.com.rest.rest.dto.UpdateUserDTO
 import br.com.rest.rest.dto.UserDTO
 import br.com.rest.rest.mapper.SingUpUserMapper
 import br.com.rest.rest.mapper.UserMapper
-import br.com.rest.rest.model.User
 import br.com.rest.rest.repositories.UserRepository
 import br.com.rest.rest.service.UserService
 import org.springframework.stereotype.Service
