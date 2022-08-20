@@ -45,6 +45,4 @@ class UserServiceImpl(
             userRepository.get(id)
         )
     }
-
-
 }
