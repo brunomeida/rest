@@ -4,13 +4,13 @@ import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.Size
 
 data class SingUpDTO(
-    @field:NotEmpty
+    @field:NotEmpty(message = "name must not be null")
     val name: String,
 
-    @field:NotEmpty
+    @field:NotEmpty(message = "email must not be null")
     val email: String,
 
-    @field:NotEmpty
+    @field:NotEmpty(message = "password must not be null")
     @field:Size(min=6, max=256)
     val password: String,
 

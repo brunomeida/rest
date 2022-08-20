@@ -9,4 +9,5 @@ interface UserService {
     fun get(id: Long): UserDTO
     fun singUp(dto: SingUpDTO): UserDTO
     fun put(dto: UpdateUserDTO): UserDTO
+    fun delete(id: Long)
 }
