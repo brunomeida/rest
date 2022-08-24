@@ -1,0 +1,7 @@
+##FROM openjdk:17-jdk
+##
+##ADD target/*.jar app.jar
+##
+##RUN sh -c 'touch /app.jar'
+##
+##ENTRYPOINT /tmp/bin/secrets-init --provider google java $JAVA_OPTS -jar $SPRING_PROFILE app.jar $SPRING_PROPERTIES
