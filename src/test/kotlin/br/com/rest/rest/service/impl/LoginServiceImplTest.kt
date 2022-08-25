@@ -6,12 +6,12 @@ import br.com.rest.rest.mapper.SingUpUserMapper
 import br.com.rest.rest.mapper.UserMapper
 import br.com.rest.rest.repositories.UserRepository
 import io.mockk.MockKAnnotations
-import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.RelaxedMockK
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
-internal class UserServiceImplTest {
+internal class LoginServiceImplTest {
     @RelaxedMockK
     lateinit var singUpUserMapper: SingUpUserMapper
 
@@ -21,7 +21,7 @@ internal class UserServiceImplTest {
     @RelaxedMockK
     lateinit var userRepository: UserRepository
 
-    @InjectMockKs
+    @RelaxedMockK
     lateinit var userServiceImpl: UserServiceImpl
 
 
@@ -38,28 +38,32 @@ internal class UserServiceImplTest {
 
     @Test
     fun singUp() {
-        userServiceImpl.singUp(SingUpDTO(
+        assertThrows<ClassCastException> { userServiceImpl.singUp(SingUpDTO(
             name = "bruno",
             email = "bruno@bruno",
             password = "senhaforte"
-        ))
+        )) }
     }
 
 
     @Test
     fun put() {
-        userServiceImpl.put(
-            UpdateUserDTO(
-                id = 1,
-                name = "bruno",
-                email = "bruno@bruno",
-                password = "senhaforte"
+        assertThrows<ClassCastException> {
+            userServiceImpl.put(
+                UpdateUserDTO(
+                    id = 1,
+                    name = "bruno",
+                    email = "bruno@bruno",
+                    password = "senhaforte"
+                )
             )
-        )
+        }
     }
 
     @Test
     fun delete() {
-        userServiceImpl.delete(1)
+        assertThrows<ClassCastException> {
+            userServiceImpl.delete(1)
+        }
     }
 }

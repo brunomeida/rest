@@ -7,6 +7,5 @@ import org.springframework.boot.runApplication
 class RestApplication
 
 fun main(args: Array<String>) {
-	System.setProperty("spring.devtools.restart.enabled", "true");
 	runApplication<RestApplication>(*args)
 }

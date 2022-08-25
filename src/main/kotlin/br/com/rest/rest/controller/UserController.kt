@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.util.UriComponentsBuilder
+import javax.transaction.Transactional
 import javax.validation.Valid
 
 @RestController
@@ -31,16 +32,19 @@ class UserController(
     fun getById(@PathVariable id: Long): UserDTO = userService.get(id)
 
     @PutMapping
+    @Transactional
     fun put(@RequestBody @Valid dto: UpdateUserDTO): ResponseEntity<UserDTO> {
         val userDto = userService.put(dto)
         return ResponseEntity.ok(userDto)
     }
 
     @DeleteMapping(ID)
+    @Transactional
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable id: Long) = userService.delete(id)
 
     @PostMapping(SING_UP)
+    @Transactional
     fun singUp(
         @RequestBody @Valid dto: SingUpDTO,
         uriBuilder: UriComponentsBuilder
