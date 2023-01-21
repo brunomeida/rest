@@ -1,5 +1,0 @@
-# Part 1: Build the app using Maven
-FROM maven:3-openjdk-18
-WORKDIR /rest
-COPY . .
-ENTRYPOINT mvn spring-boot:run -DskipTests
