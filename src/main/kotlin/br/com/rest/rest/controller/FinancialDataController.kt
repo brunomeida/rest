@@ -15,7 +15,7 @@ class FinancialDataController {
     @GetMapping
     fun main() {
         val ticker = "BBAS3"
-        val privKey = "sk_6804927972134084a33f4ccd17700e2a"
+        val privKey = ""
         val url = "https://api.iex.cloud/v1/data/core/quote/aapl?token=$privKey"
 
         val client = OkHttpClient()
