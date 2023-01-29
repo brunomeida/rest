@@ -88,7 +88,7 @@ class TableParser {
                 val liq2Meses = columns[17].text()
                 val patrimonioLiq = columns[18].text()
                 val divBrutPatri = columns[19].text()
-                val crescRec5A = columns[19].text()
+                val crescRec5A = columns[20].text()
 
                 val record = FundamentusTableData(
                     paper,
