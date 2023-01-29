@@ -52,8 +52,8 @@ class FundamentusTableDataMapper: Mapper<List<FundamentusTableData>, List<Fundam
             value
                 .replace(".", "").replace(",", ".")
                 .removeSuffix("%")
-        )
-        return valueField.divide(BigDecimal(100))
+        ).setScale(4)
+        return valueField.divide(BigDecimal(100)).setScale(4)
     }
 
 }
