@@ -5,7 +5,6 @@ import br.com.rest.rest.dto.UpdateUserDTO
 import br.com.rest.rest.dto.UserDTO
 import br.com.rest.rest.mapper.SingUpUserMapper
 import br.com.rest.rest.mapper.UserMapper
-import br.com.rest.rest.model.User
 import br.com.rest.rest.repositories.UserRepository
 import br.com.rest.rest.service.UserService
 import org.springframework.stereotype.Service
@@ -19,29 +18,31 @@ class UserServiceImpl(
 ): UserService {
 
     override fun get(): List<UserDTO> {
-        return userRepository.get()
+        return userRepository.findAll()
             .stream()
             .map{ t -> userMapper.map(t) }
             .collect(Collectors.toList())
     }
 
-    override fun get(id: Long): UserDTO = userMapper.map(userRepository.get(id))
+    override fun get(id: Long): UserDTO = userMapper.map(userRepository.getReferenceById(id))
 
     override fun singUp(dto: SingUpDTO): UserDTO {
         val user = singUpUserMapper.map(dto)
-        val createdUser = userRepository.create(user)
+        val createdUser = userRepository.save(user)
         return userMapper.map(createdUser)
     }
 
     override fun put(dto: UpdateUserDTO): UserDTO {
-        val user = userRepository.get(dto.id)
-        val userUpdated = userRepository.update(user, dto)
+        val user = userRepository.getReferenceById(dto.id)
+        user.email = dto.email
+        user.name = dto.name
+        val userUpdated = userRepository.save(user)
         return userMapper.map(userUpdated)
     }
 
     override fun delete(id: Long) {
         userRepository.delete(
-            userRepository.get(id)
+            userRepository.getReferenceById(id)
         )
     }
 }
