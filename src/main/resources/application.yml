@@ -10,9 +10,9 @@ spring:
       auto-commit: false
       connection-timeout: 30000
     type: com.zaxxer.hikari.HikariDataSource
-    url: "${DB_URL:jdbc:postgresql://localhost:5430/rest?ssl=false}"
-    username: "${DB_USER:rest}"
-    password: "${DB_PASSWORD:rest}"
+    url: "${DB_URL:jdbc:postgresql://localhost:5432/postgres?ssl=false}"
+    username: "${DB_USER:postgres}"
+    password: "${DB_PASSWORD:postgres}"
   jpa:
     show-sql: true
     properties:

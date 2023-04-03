@@ -4,9 +4,19 @@ v1.0.1 - Camada banco em memória
 
 ---
 ## LOCALHOST
-### Build aplicação docker
 Variavel de ambiente local
 - `SPRING_PROFILES_ACTIVE=local`
+
+### Execução local
+- **Subir container docker**
+- - `docker-compose up -d`
+
+### Conexão postgres
+- **Port:** 5450
+- **User:** postgres
+- **Pass:** postgres
+
+### Build aplicação docker
 
 Build e up do docker
 - `sudo docker build -t projeto-rest .`

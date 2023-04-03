@@ -1,19 +1,15 @@
-#Esse arquivo só existe para facilitar uma subida local da imagem
-version: '3'
-
+version: '3.8'
 services:
-  database:
+  db:
+    image: postgres:14.1-alpine
     restart: always
-    image: postgres:9.6
     environment:
-      POSTGRES_USER: "${DB_USERNAME:-rest}"
-      POSTGRES_PASSWORD: "${DB_PASSWORD:-rest}"
-      POSTGRES_DB: "${DB_DATABASE:-rest}"
-      TZ: GMT
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
-      - "${DB_PORT:-5430}:5432"
+      - '5450:5432'
     volumes:
-      - database:/var/lib/postgresql/data:delegated
-
+      - db:/var/lib/postgresql/data
 volumes:
-  database:
+  db:
+    driver: local
