@@ -1,0 +1,19 @@
+#Esse arquivo só existe para facilitar uma subida local da imagem
+version: '3'
+
+services:
+  database:
+    restart: always
+    image: postgres:13
+    environment:
+      POSTGRES_USER: "${DB_USERNAME:-rest}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD:-rest}"
+      POSTGRES_DB: "${DB_DATABASE:-rest}"
+      TZ: GMT
+    ports:
+      - "${DB_PORT:-5430}:5432"
+    volumes:
+      - database:/var/lib/postgresql/data:delegated
+
+volumes:
+  database:s
